@@ -22,10 +22,7 @@ view: order_items {
     type: string
     sql: ${TABLE}.returned_at ;;
   }
-  #dimension: sale_price {
-   # type: number
-  #  sql: ${TABLE}.sale_price ;;
-  #}
+
   measure: count {
     type: count
     drill_fields: [id_2, inventory_items.id, orders.id]
