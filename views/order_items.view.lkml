@@ -1,8 +1,8 @@
 view: order_items {
   sql_table_name: `orders.order_items` ;;
-  drill_fields: [id]
+  drill_fields: [id_2]
 
-  dimension: id {
+  dimension: id_2 {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
@@ -12,6 +12,7 @@ view: order_items {
     # hidden: yes
     sql: ${TABLE}.inventory_item_id ;;
   }
+
   dimension: order_id {
     type: number
     # hidden: yes
@@ -27,6 +28,6 @@ view: order_items {
   }
   measure: count {
     type: count
-    drill_fields: [id, inventory_items.id, orders.id]
+    drill_fields: [id_2, inventory_items.id, orders.id]
   }
 }
